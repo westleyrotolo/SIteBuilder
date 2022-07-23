@@ -47,7 +47,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Remove="appsettings.json" />
     <Content Remove="wwwroot\assets\js\" />
   </ItemGroup>
   <ItemGroup>
