@@ -1,0 +1,68 @@
+﻿@model SiteBuilder.Components.CardBlock
+
+<div class='card shadow-sm' style="background-image: url(@Url.Content(WebApp.Media.ResizeImage(Model.ImgBody.Media, 1100, 450)));">
+    <div class='info' style='background-color:@Model.Color.Value;'>
+        <h1 class='title'>@Html.Raw(Model.Title)</h1>
+        <p class='description'>@Html.Raw(Model.Body)</p>
+    </div>
+</div>
+<style>
+.card {
+  border-radius: 16px;
+  border-width: 0px!important;  margin: 0 auto;
+  max-height: 230px;
+  max-width: 100%;
+  overflow: hidden;
+  
+  background-size: cover;
+  margin: 0 auto;
+}
+
+.info {
+  position: relative;
+  width: 100%;
+  border:0!important;
+  height: 230px;
+  transform: translateY(100%)
+  translateY(-50px)
+  translateZ(0);
+  transition: transform 0.25s ease-out;
+}
+
+.info:before {
+  z-index: -1;
+  display: block;
+  position: absolute;
+  content: ' ';
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  filter: blur(10px);
+  background-size: cover;
+  opacity: 0.25;
+  transform: translateY(-100%)
+    translateY(40px)
+    translateZ(0);
+  transition: transform 0.25s ease-out;
+}
+
+.card:hover .info,
+.card:hover .info:before {
+  transform: translateY(0) translateZ(0);
+}
+
+.title {
+  margin: 0;
+  padding: 15px;
+  font-size: 1.2em;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.description {
+  margin: 0;
+  padding: 0 15px 15px;
+  font-size: 1em;
+  line-height: 1;
+}
+</style>
