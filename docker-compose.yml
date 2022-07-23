@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  sitebuilder:
+    image: ${DOCKER_REGISTRY-}sitebuilder
+    build:
+      context: .
+      dockerfile: SiteBuilder/Dockerfile
