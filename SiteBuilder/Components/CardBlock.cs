@@ -13,7 +13,7 @@ namespace SiteBuilder.Components
         public SelectField<ImageAspect> Aspect { get; set; } = new SelectField<ImageAspect>();
         public HtmlField Title { get; set; }
         public HtmlField Body { get; set; }
-        public ColorField Color { get; set; } = new ColorField { Value = "FFFFFF" };
+        public ColorField Color { get; set; } = new ColorField { Value = "#FFFFFF" };
         public bool HasBody => !string.IsNullOrEmpty(Body.Value);
         public override string GetTitle()
         {

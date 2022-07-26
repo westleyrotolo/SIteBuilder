@@ -170,7 +170,7 @@ Vue.component("card-block", {
         "   <br />" +
         "   <div class='color-block'>" +
         "       <div class='block-body rounded'  >" +
-        "          <input type='color' style='width:4em;height:3em' class='form-control form-control-color' :id='uid' : value='model.color.value' @input='event => model.color.value = event.target.value' title = 'Choose your color' > " +
+        "          <input type='color' style='width:4em;height:3em' class='form-control form-control-color' :id='uid' v-model='model.color.value'  title = 'Choose your color' > " +
         "      </div>" +
         "   </div>" +
         "   <br />" +
