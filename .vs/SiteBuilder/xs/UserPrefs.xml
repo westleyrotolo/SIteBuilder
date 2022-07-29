@@ -1,0 +1,27 @@
+﻿<Properties StartupConfiguration="{33C1219D-3420-4726-B57E-E59A8A631344}|Default">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints />
+  <MonoDevelop.Ide.Workbench ActiveDocument="SiteBuilder.Manager/Program.cs">
+    <Files>
+      <File FileName="SiteBuilder.Manager/Program.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="SiteBuilder" expanded="True" selected="True">
+            <Node name="SiteBuilder.Client" expanded="True" />
+            <Node name="SiteBuilder.Manager" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.SiteBuilder.Shared FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.SiteBuilder.Client FirstBuild="True" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.SiteBuilder.Manager FirstBuild="True" PreferredExecutionTarget="/Applications/Google Chrome.app" />
+</Properties>

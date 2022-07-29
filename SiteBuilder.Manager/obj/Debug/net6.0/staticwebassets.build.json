@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "k4Au04I+pwz7oD9lfXIh3fHx0yJCPm/TGgKvVkR+CNg=",
+  "Source": "SiteBuilder.Manager",
+  "BasePath": "_content/SiteBuilder.Manager",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "SiteBuilder.Manager/wwwroot",
+      "Source": "SiteBuilder.Manager",
+      "ContentRoot": "/Users/westleyrotolo/Projects/SiteBuilder/SiteBuilder.Manager/wwwroot/",
+      "BasePath": "_content/SiteBuilder.Manager",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "/Users/westleyrotolo/Projects/SiteBuilder/SiteBuilder.Manager/wwwroot/empty.txt",
+      "SourceId": "SiteBuilder.Manager",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/westleyrotolo/Projects/SiteBuilder/SiteBuilder.Manager/wwwroot/",
+      "BasePath": "_content/SiteBuilder.Manager",
+      "RelativePath": "empty.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/empty.txt"
+    }
+  ]
+}

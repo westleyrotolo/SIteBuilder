@@ -1,0 +1,107 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/westleyrotolo/Projects/SiteBuilder/SiteBuilder.Manager/SiteBuilder.Manager.csproj": {}
+  },
+  "projects": {
+    "/Users/westleyrotolo/Projects/SiteBuilder/SiteBuilder.Manager/SiteBuilder.Manager.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/westleyrotolo/Projects/SiteBuilder/SiteBuilder.Manager/SiteBuilder.Manager.csproj",
+        "projectName": "SiteBuilder.Manager",
+        "projectPath": "/Users/westleyrotolo/Projects/SiteBuilder/SiteBuilder.Manager/SiteBuilder.Manager.csproj",
+        "packagesPath": "/Users/westleyrotolo/.nuget/packages/",
+        "outputPath": "/Users/westleyrotolo/Projects/SiteBuilder/SiteBuilder.Manager/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/westleyrotolo/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "http://mynuget.gfm.cloud:8624/nuget/MyNuget": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://git-mob-sf.altran.it/api/v4/groups/73/-/packages/nuget/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Piranha": {
+              "target": "Package",
+              "version": "[10.1.0, )"
+            },
+            "Piranha.AspNetCore": {
+              "target": "Package",
+              "version": "[10.1.0, )"
+            },
+            "Piranha.AspNetCore.Identity.SQLite": {
+              "target": "Package",
+              "version": "[10.1.0, )"
+            },
+            "Piranha.AttributeBuilder": {
+              "target": "Package",
+              "version": "[10.1.0, )"
+            },
+            "Piranha.Data.EF.SQLite": {
+              "target": "Package",
+              "version": "[10.1.0, )"
+            },
+            "Piranha.ImageSharp": {
+              "target": "Package",
+              "version": "[10.1.0, )"
+            },
+            "Piranha.Local.FileStorage": {
+              "target": "Package",
+              "version": "[10.1.0, )"
+            },
+            "Piranha.Manager": {
+              "target": "Package",
+              "version": "[10.1.0, )"
+            },
+            "Piranha.Manager.LocalAuth": {
+              "target": "Package",
+              "version": "[10.1.0, )"
+            },
+            "Piranha.Manager.TinyMCE": {
+              "target": "Package",
+              "version": "[10.1.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.302/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
