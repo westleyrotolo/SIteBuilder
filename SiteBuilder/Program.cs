@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Piranha;
 using Piranha.AttributeBuilder;
-using Piranha.AspNetCore.Identity.SQLite;
-using Piranha.Data.EF.SQLite;
+using Piranha.AspNetCore.Identity.PostgreSQL;
+using Piranha.Data.EF.PostgreSql;
 using Piranha.Manager.Localization;
 using Piranha.Manager.Editor;
 using SiteBuilder;
@@ -35,8 +35,14 @@ builder.AddPiranha(options =>
     options.UseMemoryCache();
 
     var connectionString = builder.Configuration.GetConnectionString("piranha");
-    options.UseEF<SQLiteDb>(db => db.UseSqlite(connectionString));
-    options.UseIdentityWithSeed<IdentitySQLiteDb>(db => db.UseSqlite(connectionString));
+    AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+    options.UseEF<PostgreSqlDb>(db =>
+    {
+        db.UseNpgsql(connectionString, options =>
+        {
+        });
+    });
+    options.UseIdentityWithSeed<IdentityPostgreSQLDb>(db => db.UseNpgsql(connectionString));
 
     /**
      * Here you can configure the different permissions

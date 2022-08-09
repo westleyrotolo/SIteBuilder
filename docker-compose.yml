@@ -2,7 +2,23 @@ version: '3.4'
 
 services:
   sitebuilder:
+    container_name: site_builder_webapp
     image: ${DOCKER_REGISTRY-}sitebuilder
     build:
       context: .
       dockerfile: SiteBuilder/Dockerfile
+  sitebuilder_db:
+    container_name: site_builder_postgres 
+    image: postgres:latest
+    ports:
+      - "5432"
+    restart: always
+    volumes:
+      - sitebuilder_db_volume:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: "admin"
+      POSTGRES_PASSWORD: "Rubrik2022."
+      POSTGRES_DB: "SiteBuilder"
+volumes:
+    sitebuilder_db_volume:
+  
