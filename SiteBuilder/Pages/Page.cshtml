@@ -7,11 +7,19 @@
 @section head {
     @WebApp.MetaTags(Model.Data)
 }
-
+<style>
+    .has-image {
+        height: 60vh !important;
+        min-height: 450px !important;
+    }
+    .text-center-header {
+        height: 100% !important;
+    }
+</style>
 <header @(hasImage ? "class=has-image" : "") @(hasImage ? $"style=background-image:url({ @Url.Content(WebApp.Media.ResizeImage(Model.Data.PrimaryImage, 1920, 400)) })" : "")>
-    <div class="dimmer"></div>
-    <div class="container text-center">
-        <h1>@Model.Data.Title</h1>
+    <div class="dimmer" style="display: flex;"></div>
+    <div class="container text-center text-center-header" style="display: flex !important; flex-flow: column; justify-content: center; align-items: center">
+        <h1 >@Model.Data.Title</h1>
         @if (!string.IsNullOrWhiteSpace(Model.Data.Excerpt))
         {
             <div class="row justify-content-center">

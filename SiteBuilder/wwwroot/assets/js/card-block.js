@@ -3,14 +3,14 @@
 */
 
 Vue.component("card-block", {
-    props: ["uid", "toolbar", "model"],
+    props: ["uid", "toolbar", "model", "test"],
     data: function () {
         return {
             imgBody: this.model.imgBody.value,
             title: this.model.title.value,
             body: this.model.body.value,
-            color: this.model.color.value
-
+            color: this.model.color.value,
+            uid2: this.uid+"2"
         };
     },
     methods: {
@@ -18,14 +18,21 @@ Vue.component("card-block", {
             // clear media from block
         },
         onBlurTitle: function (e) {
+            
             this.model.title.value = e.target.innerHTML;
         },
         onBlurBody: function (e) {
             this.model.body.value = e.target.innerHTML;
         },
         onChange: function (data) {
+            
             console.log('on change', e)
             this.model.title.value = data;
+        },
+        onChangeBody: function (data) {
+
+            console.log('on change', e)
+            this.model.body.value = data;
         },
         select: function () {
             if (this.model.imgBody.media != null) {
@@ -54,6 +61,7 @@ Vue.component("card-block", {
                     uid: this.uid,
                     title: this.model.imgBody.media.filename
                 });
+
             } else {
                 console.log("No image was selected");
             }
@@ -96,6 +104,7 @@ Vue.component("card-block", {
         }
     },
     mounted: function () {
+        piranha.editor.addInline(this.uid2, this.toolbar, this.onChangeBody);
         piranha.editor.addInline(this.uid, this.toolbar, this.onChange);
         this.model.getTitle = function () {
             if (this.model.imgBody.media != null) {
@@ -164,7 +173,7 @@ Vue.component("card-block", {
         "   <br />" +
         "   <div class='html-block'>" +
         "       <div class='block-body border rounded p-1' :class='{ empty: isBodyEmpty }' >" +
-        "           <div  contenteditable='true' :id='uid' v-html='body' v-on:blur='onBlurBody'></div> " +
+        "           <div  contenteditable='true' :id='uid2' v-html='body' v-on:blur='onBlurBody'></div> " +
         "       </div>" +
         "   </div>" +
         "   <br />" +

@@ -3,7 +3,7 @@
 <div class='card shadow-sm' style="background-image: url(@Url.Content(WebApp.Media.ResizeImage(Model.ImgBody.Media, 1100, 450)));">
     <div class='info' style='background-color:@Model.Color.Value;'>
         <h1 class='title'>@Html.Raw(Model.Title)</h1>
-        <p class='description'>@Html.Raw(Model.Body)</p>
+        <div class='description'>@Html.Raw(Model.Body)</div>
     </div>
 </div>
 <style>
@@ -61,7 +61,7 @@
 
 .description {
   margin: 0;
-  padding: 0 15px 15px;
+  padding:0 15px 15px;
   font-size: 1em;
   line-height: 1;
 }
