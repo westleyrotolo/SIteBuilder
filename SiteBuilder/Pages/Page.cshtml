@@ -10,7 +10,7 @@
 <style>
     .has-image {
         height: 60vh !important;
-        min-height: 450px !important;
+        min-height: 250px !important;
     }
     .text-center-header {
         height: 100% !important;
@@ -31,7 +31,7 @@
     </div>
 </header>
 
-<main>
+<main style=" margin: 0 auto;">
     @foreach (var block in Model.Data.Blocks)
     {
         <div class="block @block.CssName()">

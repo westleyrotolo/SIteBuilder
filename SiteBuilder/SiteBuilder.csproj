@@ -31,6 +31,7 @@
     <None Remove="card-block.js" />
     <None Remove="Piranha.Data.EF.PostgreSql" />
     <None Remove="Piranha.AspNetCore.Identity.PostgreSQL" />
+    <None Remove="Infrastructures\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -38,6 +39,7 @@
     <Folder Include="Views\Cms\" />
     <Folder Include="Views\Cms\DisplayTemplates\" />
     <Folder Include="wwwroot\assets\js\" />
+    <Folder Include="Infrastructures\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Resources\Sites.it.resx">
