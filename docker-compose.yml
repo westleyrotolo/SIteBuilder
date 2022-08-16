@@ -4,6 +4,8 @@ services:
   sitebuilder:
     container_name: site_builder_webapp
     image: ${DOCKER_REGISTRY-}sitebuilder
+    ports:
+      - "8000:80"
     build:
       context: .
       dockerfile: SiteBuilder/Dockerfile
