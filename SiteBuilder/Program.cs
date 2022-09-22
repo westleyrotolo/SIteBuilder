@@ -7,6 +7,7 @@ using Piranha.Manager.Localization;
 using Piranha.Manager.Editor;
 using SiteBuilder;
 using SiteBuilder.Components;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,17 +24,14 @@ builder.AddPiranha(options =>
      */
 
     options.AddRazorRuntimeCompilation = true;
-    
+   
     options.UseCms();
     options.UseManager();
-
     App.Blocks.Register<SiteBuilder.Components.CardBlock>();
     App.Modules.Manager().Scripts.Add("~/assets/js/card-block.js");
     options.UseFileStorage(naming: Piranha.Local.FileStorageNaming.UniqueFolderNames);
     options.UseImageSharp();
     options.UseTinyMCE();
-    options.UseMemoryCache();
-
     var connectionString = builder.Configuration.GetConnectionString("piranha");
     AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
     options.UseEF<PostgreSqlDb>(db =>
@@ -61,7 +59,6 @@ builder.AddPiranha(options =>
     options.LoginUrl = "login";
      */
 
-
 });
 
 var app = builder.Build();
@@ -70,11 +67,18 @@ if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
 }
+app.UseStaticFiles(new StaticFileOptions()
+{
+    OnPrepareResponse = context =>
+    {
+        context.Context.Response.Headers.Add("Cache-Control", "no-cache, no-store");
+        context.Context.Response.Headers.Add("Expires", "-1");
+    }
+});
 app.UsePiranha(options =>
 {
     // Initialize Piranha
     App.Init(options.Api);
-
 
     App.Blocks.Register<RawHtmlBlock>();
     App.Modules.Manager().Scripts.Add("~/rawhtml-block.js");
@@ -87,11 +91,9 @@ app.UsePiranha(options =>
 
     // Configure Tiny MCE
     EditorConfig.FromFile("editorconfig.json");
-    
     options.UseManager();
     options.UseTinyMCE();
     options.UseIdentity();
 });
-
 
 app.Run();

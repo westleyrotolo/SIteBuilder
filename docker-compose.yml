@@ -9,11 +9,18 @@ services:
     build:
       context: .
       dockerfile: SiteBuilder/Dockerfile
+    volumes:
+      - app_data:/app/wwwroot
+    depends_on:
+      - sitebuilder_db
+    networks:
+      - back-tier
+
   sitebuilder_db:
     container_name: site_builder_postgres 
     image: postgres:latest
     ports:
-      - "5432"
+      - "5432:5432"
     restart: always
     volumes:
       - sitebuilder_db_volume:/var/lib/postgresql/data
@@ -21,6 +28,13 @@ services:
       POSTGRES_USER: "admin"
       POSTGRES_PASSWORD: "Rubrik2022."
       POSTGRES_DB: "SiteBuilder"
+    networks:
+      - back-tier
 volumes:
     sitebuilder_db_volume:
+    app_data:
+
+
+networks:
+  back-tier:
   

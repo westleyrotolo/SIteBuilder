@@ -7,7 +7,7 @@
     "SiteBuilder": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "http://localhost:14272",
+      "applicationUrl": "http://localhost:5767",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

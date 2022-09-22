@@ -12,13 +12,19 @@
         height: 60vh !important;
         min-height: 250px !important;
     }
+    .not-has-image {
+        height: 100px
+    }
     .text-center-header {
         height: 100% !important;
     }
+    .no-padding {
+        padding:0!important
+    }
 </style>
-<header @(hasImage ? "class=has-image" : "") @(hasImage ? $"style=background-image:url({ @Url.Content(WebApp.Media.ResizeImage(Model.Data.PrimaryImage, 1920, 400)) })" : "")>
+<header class="@(hasImage ? "has-image" : "not-has-image")" @(hasImage ? $"style=background-image:url({ @Url.Content(WebApp.Media.ResizeImage(Model.Data.PrimaryImage, 1920, 400)) })" : "")>
     <div class="dimmer" style="display: flex;"></div>
-    <div class="container text-center text-center-header" style="display: flex !important; flex-flow: column; justify-content: center; align-items: center">
+    <div class="@(hasImage ? "container text-center text-center-header" : "no-padding container text-center text-center-header")" style="display: flex !important; flex-flow: column; justify-content: center; align-items: center">
         <h1 >@Model.Data.Title</h1>
         @if (!string.IsNullOrWhiteSpace(Model.Data.Excerpt))
         {
