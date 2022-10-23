@@ -20,7 +20,7 @@ services:
     container_name: site_builder_postgres 
     image: postgres:latest
     ports:
-      - "15432:5432"
+      - "5432"
     restart: always
     volumes:
       - sitebuilder_db_volume:/var/lib/postgresql/data
