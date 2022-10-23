@@ -29,6 +29,10 @@ builder.AddPiranha(options =>
     options.UseManager();
     App.Blocks.Register<SiteBuilder.Components.CardBlock>();
     App.Modules.Manager().Scripts.Add("~/assets/js/card-block.js");
+    App.Blocks.Register<SiteBuilder.Components.BannerBlock>();
+    App.Modules.Manager().Scripts.Add("~/assets/js/banner-block.js");
+    App.Blocks.Register<SiteBuilder.Components.PostsBlock>();
+    App.Modules.Manager().Scripts.Add("~/assets/js/posts-block.js");
     options.UseFileStorage(naming: Piranha.Local.FileStorageNaming.UniqueFolderNames);
     options.UseImageSharp();
     options.UseTinyMCE();

@@ -1,0 +1,26 @@
+﻿@model SiteBuilder.Components.BannerBlock
+
+<div style="min-height: 15em;
+        background-size: cover;
+        background-image: url( @WebApp.ContentUrl(Model.ImgBody) );
+        width: 100vw;
+        margin-left: calc(-0.5*(100vw - 100%));
+        display: flex;
+        align-items: center;"
+     class="p-4">
+    <div style=" display: table-cell; vertical-align: middle;">
+        <span class="h3 mt-2">
+            @Html.Raw(Model.Title)
+        </span>
+        <span class="h4 my-3">
+            @Html.Raw(Model.Body)
+        </span>
+        <a class="mb-2 btn btn-primary"
+           href="@Model.ButtonUrl.Value"
+           role="button"
+           style="background-color:@Model.ButtonColor.Value;
+              border-color:@Model.ButtonColor.Value">
+            @Model.ButtonText
+        </a>
+    </div>
+</div>

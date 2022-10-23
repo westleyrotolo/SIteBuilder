@@ -1,0 +1,36 @@
+﻿@using Piranha.Models;
+@model SiteBuilder.Components.PostsBlock
+@{
+
+    var posts = new List<DynamicPost>();
+    var items = await @WebApp.Api.Pages.GetAllBlogsAsync();
+    if (items?.Any() == true)
+    {
+        var item = items.FirstOrDefault(x => x.Title.ToLower() == Model.Name.Value.ToLower());
+        if (item != null)
+        {
+            var p = await WebApp.Api.Posts.GetAllAsync(item.Id);
+            posts = p?.OrderByDescending(x => x.Created).Take(3).ToList();
+        }
+    }
+}
+<div class="my-2 row">
+    @foreach (var post in posts)
+        {
+        <div style="padding:1em" class="col-md-4 col-12">
+
+            <div style="cursor: pointer;background-color:#fafafa" onclick="@("window.location.href='" + @WebApp.Url(post) + "'");" class="card">
+                @if (post.PrimaryImage.HasValue)
+                    {
+                    <img class="card-img-top" style="object-fit:contain" src="@Url.Content(post.PrimaryImage)">
+
+                    }
+                <div class="card-body">
+                    <h5>@post.Title</h5>
+                    <p>@Html.Raw(post.Excerpt)</p>
+                </div>
+            </div>
+            
+        </div>
+        }
+    </div>
