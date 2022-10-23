@@ -2,19 +2,17 @@
 
 @if (Model.Body.Page != null)
 {
-    <div class="card">
-        @if (Model.Body.Page.PrimaryImage.HasValue)
-        {
-            <a href="@WebApp.Url(Model)">
-                <img class="card-img-top" style="object-fit:contain" src="@Url.Content(Model.Body.Page.PrimaryImage)">
-            </a>
-        }
-        <div class="card-body">
-            <h5>@Model.Body.Page.Title</h5>
-            <p>@Html.Raw(Model.Body.Page.Excerpt)</p>
-            <a href="@WebApp.Url(Model)" class="btn btn-sm btn-primary">Read more</a>
-        </div>
-    </div>
+            <div class="card cursor" onclick="window.location='@WebApp.AbsoluteUrl(Model)'">
+                @if (Model.Body.Page.PrimaryImage.HasValue)
+                {
+                    <img class="card-img-top" style="object-fit:contain" src="@Url.Content(Model.Body.Page.PrimaryImage)">
+
+                }
+                <div class="card-body" onclick="window.location=@WebApp.Url(Model)">
+                    <h5>@Model.Body.Page.Title</h5>
+                    <p>@Html.Raw(Model.Body.Page.Excerpt)</p>
+                </div>
+            </div>
 }
 
         
