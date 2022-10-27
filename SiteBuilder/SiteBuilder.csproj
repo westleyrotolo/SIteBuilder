@@ -32,6 +32,10 @@
     <None Remove="Piranha.Data.EF.PostgreSql" />
     <None Remove="Piranha.AspNetCore.Identity.PostgreSQL" />
     <None Remove="Infrastructures\" />
+    <None Remove="assets\js\" />
+    <None Remove="assets\js\posts-block.js" />
+    <None Remove="assets\js\banner-block.js" />
+    <None Remove="assets\js\card-block.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -40,6 +44,7 @@
     <Folder Include="Views\Cms\DisplayTemplates\" />
     <Folder Include="wwwroot\assets\js\" />
     <Folder Include="Infrastructures\" />
+    <Folder Include="assets\js\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Resources\Sites.it.resx">
@@ -60,16 +65,25 @@
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+    <Content Include="assets\js\posts-block.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\banner-block.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\card-block.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Update="wwwroot\quote-block.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Update="wwwroot\assets\js\card-block.js">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Update="wwwroot\assets\js\banner-block.js">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Update="wwwroot\assets\js\posts-block.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -110,6 +124,12 @@
     </None>
     <None Update="seed\cheerful-diverse-colleagues-working-on-laptops-in-workspace-3860809.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="assets\js\posts-block.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="assets\js\card-block.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 </Project>
