@@ -1,6 +1,7 @@
 ﻿{
   "plugins": "autoresize autolink code hr paste lists piranhalink piranhaimage textcolor",
-  "toolbar": "bold italic | bullist numlist hr | alignleft aligncenter alignright | formatselect styleselect | piranhalink piranhaimage | forecolor backcolor",
+  "toolbar": "bold italic | bullist numlist hr | alignleft aligncenter alignright | formatselect styleselect | piranhalink piranhaimage | fontsizeselect forecolor backcolor",
+  "fontsize_formats": "8pt 10pt 12pt 14pt 16pt 18pt 24pt 36pt 48pt",
   "blockformats": "Paragraph=p;Header 1=h1;Header 2=h2;Header 3=h3;Header 4=h4;Code=pre;Quote=blockquote",
   "styleformats": [
     {
